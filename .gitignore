@@ -1,0 +1,15 @@
+__pycache__/*
+./__pycache__/*
+./**/__pycache__/*
+*.ipynb
+./ipynb_checkpoints/*
+
+./__pycache__
+*.ipynb
+*.pyc
+.config/__pycache__
+temp/
+Logs/
+*.sh
+*.vscode
+settings.json

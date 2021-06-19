@@ -1,0 +1,38 @@
+#config.yaml
+
+DATASET:
+    base_path: '<Directory where the files mentioned below are placed>'
+    train: 'SH+CHuman_FT.txt'
+    valid: 'HeadHunter_Test.txt'
+    benchmark: 'Combined'
+    mean_std: [[117, 110, 105], [67.10, 65.45, 66.23]]
+    min_size: 800
+    max_size: 1400
+
+TRAINING:
+    exp_name: 'COMBINED_R50_PT'
+    backbone : 'resnet50'
+    only_backbone : False
+    pretrained_model: '<Path to .pth if resuming the training>'
+    save_dir: '<Directory to save the model?>'
+    start_epoch: 1
+    eval_every: 5
+    log_dir: './Logs/'
+    milestones: [10,25,40]
+    max_epoch: 50
+
+HYPER_PARAM:
+    learning_rate: 0.01
+    momentum: 0.9
+    weight_decay: 0.0005
+    gamma: 0.1
+    batch_size: 1
+
+NETWORK:
+    use_deform: False
+    ohem: True
+    context: 'cpm'
+    custom_sampling: False
+    soft_nms: False
+    upscale_rpn: True
+    median_anchors: True
